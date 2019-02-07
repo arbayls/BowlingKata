@@ -37,6 +37,25 @@ namespace Program
             game.Throw(2);
             Assert.AreEqual(14, game.Score());
         }
+
+        [Test]
+        public void StrikeGame()
+        {
+            game.Throw(10);
+            game.Throw(1);
+            game.Throw(6);
+            Assert.AreEqual(24, game.Score());
+        }
+
+        [Test]
+        public void PerfectGame()
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                game.Throw(10);
+            }
+            Assert.AreEqual(300, game.Score());
+        }
     }
 }
 
